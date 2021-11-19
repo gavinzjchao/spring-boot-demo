@@ -29,6 +29,7 @@ public class UserController {
 
     @PostMapping("/user")
     public Dict save(@RequestBody User user) {
+        log.info(user.toString());
         Boolean save = userService.save(user);
         return Dict.create().set("code", save ? 200 : 500).set("msg", save ? "成功" : "失败").set("data", save ? user : null);
     }

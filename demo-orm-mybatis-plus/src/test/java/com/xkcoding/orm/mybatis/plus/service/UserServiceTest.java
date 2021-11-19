@@ -144,4 +144,15 @@ public class UserServiceTest extends SpringBootDemoOrmMybatisPlusApplicationTest
         testSaveList();
     }
 
+
+    @Test
+    public void testListAllByPhone() {
+        String phone = "17300000001";
+        List<User> list1 = userService.listAllByPhone(phone);
+        List<User> list2 = userService.listAllByPhone2(phone);
+        Assert.assertEquals(list1, list2);
+        log.debug("list1={}",list1);
+        log.debug("list2={}", list2);
+    }
+
 }

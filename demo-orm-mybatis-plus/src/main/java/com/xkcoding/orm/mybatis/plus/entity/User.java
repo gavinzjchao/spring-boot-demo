@@ -1,6 +1,7 @@
 package com.xkcoding.orm.mybatis.plus.entity;
 
 import com.baomidou.mybatisplus.annotation.TableField;
+import com.baomidou.mybatisplus.annotation.TableLogic;
 import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -62,6 +63,7 @@ public class User implements Serializable {
     /**
      * 状态，-1：逻辑删除，0：禁用，1：启用
      */
+    @TableLogic
     private Integer status;
 
     /**
